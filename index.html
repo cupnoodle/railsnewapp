@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>RailsNew.app - Customize your new Rails app</title>
     <link rel="stylesheet" href="tailwind.css">
     <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
   </head>
@@ -19,47 +19,445 @@
           </div>
         </div>
 
-        <div class="mx-auto max-w-2xl text-left my-8">
-          <h2 class="text-3xl font-semibold text-gray-700 mb-2">Use Rails preset?</h2>
+        <div class="mx-auto max-w-2xl text-left my-10">
+          <h2 class="text-3xl font-semibold text-gray-700 mb-2">🧩 Use Rails preset?</h2>
           <fieldset>
             <legend class="sr-only">Use Rails preset? Like API / Minial mode</legend>
             <div class="bg-white rounded-md -space-y-px shadow">
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
-              <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none">
+              <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
                 <input type="radio" name="privacy-setting" value="Public access" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-0-label" aria-describedby="privacy-setting-0-description">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="privacy-setting-0-label" class="block text-sm font-medium"> None </span>
                   <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
-                  <span id="privacy-setting-0-description" class="block text-sm"> Not using preset </span>
+                  <span id="privacy-setting-0-description" class="block text-sm text-gray-600"> Not using preset </span>
                 </span>
               </label>
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
-              <label class="relative border p-4 flex cursor-pointer focus:outline-none">
+              <label class="relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
                 <input type="radio" name="privacy-setting" value="Private to Project Members" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-1-label" aria-describedby="privacy-setting-1-description">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="privacy-setting-1-label" class="block text-sm font-medium"> API mode </span>
                   <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
-                  <span id="privacy-setting-1-description" class="block text-sm"> Choose this if you plan to use the Rails app as API only </span>
+                  <span id="privacy-setting-1-description" class="block text-sm text-gray-600"> Choose this if you plan to use the Rails app as API only </span>
                 </span>
               </label>
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
-              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none">
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
                 <input type="radio" name="privacy-setting" value="Private to you" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="privacy-setting-2-label" class="block text-sm font-medium"> Minimal mode </span>
                   <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
-                  <span id="privacy-setting-2-description" class="block text-sm"> This will skip all Active-* gems, bootsnap, builder, spring, system_tests, turbo etc</span>
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> This will skip all Active-* gems, bootsnap, builder, spring, system_tests, turbo etc</span>
                 </span>
               </label>
             </div>
           </fieldset>
-
         </div>
+
+        <div class="mx-auto max-w-2xl text-left my-10">
+          <h2 class="text-3xl font-semibold text-gray-700 mb-2">🗄 Database</h2>
+          <fieldset>
+            <legend class="sr-only">Choose a database, MySQL / PostgreSQL / SQLite</legend>
+            <div class="bg-white rounded-md -space-y-px shadow">
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="database" value="Public access" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-0-label" aria-describedby="privacy-setting-0-description">
+                <span class="ml-3 flex flex-col w-full">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-0-label" class="block text-sm font-medium"> SQLite </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-0-description" class="block text-sm text-gray-600"> The Rails default, Pieter Levels used it to scale remoteok.io! </span>
+                </span>
+                <div class="flex justify-center">
+                  <img class="w-10 my-auto" src="img/sqlite.svg"></img>
+                </div>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="database" value="Private to Project Members" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-1-label" aria-describedby="privacy-setting-1-description">
+                <span class="ml-3 flex flex-col w-full">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-1-label" class="block text-sm font-medium"> Postgres </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-1-description" class="block text-sm text-gray-600"> Recommended database with plenty of extensions </span>
+                </span>
+                <div class="flex justify-center">
+                  <img class="w-10 my-auto" src="img/postgres.svg"></img>
+                </div>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="database" value="Private to you" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col w-full">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> MySQL </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Decent database</span>
+                </span>
+                <div class="flex justify-center">
+                  <img class="w-10 my-auto" src="img/mysql.svg"></img>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="mx-auto max-w-2xl text-left my-10">
+          <h2 class="text-3xl font-semibold text-gray-700 mb-2">🧹 Housekeeping</h2>
+          <fieldset>
+            <legend class="sr-only">Rails app housekeeping files</legend>
+            <div class="bg-white rounded-md -space-y-px shadow">
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="privacy-setting" value="Public access" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-0-label" aria-describedby="privacy-setting-0-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-0-label" class="block text-sm font-medium"> Create .gitignore file? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-0-description" class="block text-sm text-gray-600"> Create .gitignore file in your app </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="privacy-setting" value="Private to Project Members" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-1-label" aria-describedby="privacy-setting-1-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-1-label" class="block text-sm font-medium"> Create .keep files? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-1-description" class="block text-sm text-gray-600"> Create .keep files in empty directories </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="privacy-setting" value="Private to you" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Add Bootsnap? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Bootsnap gem boot large Rails app faster by optmizing computations</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="privacy-setting" value="Private to you" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Add Spring? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Spring gem preload Rails app by keeping it running on background</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="privacy-setting" value="Private to you" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Run <span class="font-mono">bundle install</span> ?</span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Run bundle install after generating Gemfile</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="mx-auto max-w-2xl text-left my-10">
+          <h2 class="text-3xl font-semibold text-gray-700 mb-2">🚰 Asset Pipeline</h2>
+          <fieldset>
+            <legend class="sr-only">Choose a Asset Pipeline strategy</legend>
+            <div class="bg-white rounded-md -space-y-px shadow">
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="asset_pipeline" value="none" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-0-label" aria-describedby="privacy-setting-0-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-0-label" class="block text-sm font-medium"> None </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-0-description" class="block text-sm text-gray-600"> Choose this to skip using Asset Pipeline</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="asset_pipeline" value="sprockets" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-1-label" aria-describedby="privacy-setting-1-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-1-label" class="block text-sm font-medium"> Sprockets </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-1-description" class="block text-sm text-gray-600"> The original asset pipeline gem, default </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="asset_pipeline" value="propshaft" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> PropShaft </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Succesor to Sprockets, but still in Alpha</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="mx-auto max-w-2xl text-left my-10">
+          <h2 class="text-3xl font-semibold text-gray-700 mb-2">☕️ Javascript</h2>
+          <fieldset>
+            <legend class="sr-only">Choose a Javascript strategy</legend>
+            <div class="bg-white rounded-md -space-y-px shadow">
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="javascript" value="none" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-0-label" aria-describedby="privacy-setting-0-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-0-label" class="block text-sm font-medium"> None </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-0-description" class="block text-sm text-gray-600"> Choose this to skip generation of Javascript files</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="javascript" value="importmap" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-1-label" aria-describedby="privacy-setting-1-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-1-label" class="block text-sm font-medium"> Importmap </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-1-description" class="block text-sm text-gray-600"> Default Javascript management for Rails 7 </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="javascript" value="esbuild" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> esbuild </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Extremely fast Javascript bundler!</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="javascript" value="rollup" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Rollup </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Decent module bundler for Javascript </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="javascript" value="webpack" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> webpack </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Introduced in Rails 6 </span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="mx-auto max-w-2xl text-left my-10">
+          <h2 class="text-3xl font-semibold text-gray-700 mb-2">🎨 CSS</h2>
+          <fieldset>
+            <legend class="sr-only">Choose a CSS strategy</legend>
+            <div class="bg-white rounded-md -space-y-px shadow">
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="css" value="none" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-0-label" aria-describedby="privacy-setting-0-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-0-label" class="block text-sm font-medium"> None </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-0-description" class="block text-sm text-gray-600"> Don't use any CSS bundler</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="css" value="bootstrap" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-1-label" aria-describedby="privacy-setting-1-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-1-label" class="block text-sm font-medium"> Bootstrap </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-1-description" class="block text-sm text-gray-600"> Good ol classic for developing responsive web design </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="css" value="bulma" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Bulma </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Modern CSS framework based on Flexbox</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="css" value="tailwind" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Tailwind </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> A utility-first CSS framework to rapidly build website </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="css" value="postcss" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> PostCSS </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> A tool for transforming CSS with JavaScript </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="radio" name="css" value="sass" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Sass </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Preprocess Sass file into CSS </span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="mx-auto max-w-2xl text-left my-10">
+          <h2 class="text-3xl font-semibold text-gray-700 mb-2">💎 Rails Goodies</h2>
+          <fieldset>
+            <legend class="sr-only">Rails library like ActiveRecord etc</legend>
+            <div class="bg-white rounded-md -space-y-px shadow">
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="rails" value="action-cable" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Use ActionCable? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> ActionCable integrates Web Sockets to your Rails app</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="rails" value="active-job" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Use ActiveJob? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> ActiveJob is the default job framework for Rails</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="rails" value="action-mailbox" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-0-label" aria-describedby="privacy-setting-0-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-0-label" class="block text-sm font-medium"> Use ActionMailbox? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-0-description" class="block text-sm text-gray-600"> ActionMailbox routes incoming emails to controller-like mailboxes </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="rails" value="action-mailer" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-1-label" aria-describedby="privacy-setting-1-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-1-label" class="block text-sm font-medium"> Use ActionMailer? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-1-description" class="block text-sm text-gray-600"> ActionMailer send emails using mailer classes and views </span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="rails" value="active-record" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Use ActiveRecord? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Default ORM for Rails</span>
+                </span>
+              </label>
+
+               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="rails" value="active-storage" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Use ActiveStorage? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> ActiveStorage facilitate file uploads and attach them to Active Record objects</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="rails" value="action-text" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Use ActionText? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> ActionText allows user to edit rich text content easily</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="rails" value="hotwire" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Use Hotwire / Turbo / Stimulus? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Send HTML over the wire!</span>
+                </span>
+              </label>
+
+              <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
+              <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
+                <input type="checkbox" name="rails" value="jbuilder" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <span class="ml-3 flex flex-col">
+                  <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium"> Use JBuilder? </span>
+                  <!-- Checked: "text-rose-700", Not Checked: "text-gray-500" -->
+                  <span id="privacy-setting-2-description" class="block text-sm text-gray-600"> Generate JSON output using Simple Ruby DSL</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
       </div>
     </div>
   </body>
