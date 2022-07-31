@@ -32,6 +32,16 @@
             <span x-text="transformJavascript(javascript)"></span>
             <span x-text="transformCSS(css)"></span>
             <span x-text="transformActionCable(actionCable)"></span>
+            <span x-text="transformActiveJob(activeJob)"></span>
+            <span x-text="transformActionMailbox(actionMailbox)"></span>
+            <span x-text="transformActionMailer(actionMailer)"></span>
+            <span x-text="transformActiveRecord(activeRecord)"></span>
+            <span x-text="transformActiveStorage(activeStorage)"></span>
+            <span x-text="transformActionText(actionText)"></span>
+            <span x-text="transformHotwire(hotwire)"></span>
+            <span x-text="transformJBuilder(jbuilder)"></span>
+            <span x-text="transformTest(test)"></span>
+            <span x-text="transformSystemTest(systemTest)"></span>
           </p>
         </div>
 
@@ -374,7 +384,7 @@
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="rails" value="active-job" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-1-label" aria-describedby="goodies-1-description">
+                <input type="checkbox" name="rails" value="active-job" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-1-label" aria-describedby="goodies-1-description" x-model="activeJob">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="goodies-1-label" class="block text-sm font-medium"> Use ActiveJob? </span>
@@ -385,7 +395,7 @@
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="rails" value="action-mailbox" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-2-label" aria-describedby="goodies-2-description">
+                <input type="checkbox" name="rails" value="action-mailbox" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-2-label" aria-describedby="goodies-2-description" x-model="actionMailbox">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="goodies-2-label" class="block text-sm font-medium"> Use ActionMailbox? </span>
@@ -396,7 +406,7 @@
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="rails" value="action-mailer" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-3-label" aria-describedby="goodies-3-description">
+                <input type="checkbox" name="rails" value="action-mailer" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-3-label" aria-describedby="goodies-3-description" x-model="actionMailer">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="goodies-3-label" class="block text-sm font-medium"> Use ActionMailer? </span>
@@ -407,7 +417,7 @@
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="rails" value="active-record" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-4-label" aria-describedby="goodies-4-description">
+                <input type="checkbox" name="rails" value="active-record" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-4-label" aria-describedby="goodies-4-description" x-model="activeRecord">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="goodies-4-label" class="block text-sm font-medium"> Use ActiveRecord? </span>
@@ -418,7 +428,7 @@
 
                <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="rails" value="active-storage" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-5-label" aria-describedby="goodies-5-description">
+                <input type="checkbox" name="rails" value="active-storage" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-5-label" aria-describedby="goodies-5-description" x-model="activeStorage">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="goodies-5-label" class="block text-sm font-medium"> Use ActiveStorage? </span>
@@ -429,7 +439,7 @@
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="rails" value="action-text" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-6-label" aria-describedby="goodies-6-description">
+                <input type="checkbox" name="rails" value="action-text" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-6-label" aria-describedby="goodies-6-description" x-model="actionText">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="goodies-6-label" class="block text-sm font-medium"> Use ActionText? </span>
@@ -440,7 +450,7 @@
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="rails" value="hotwire" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-7-label" aria-describedby="goodies-7-description">
+                <input type="checkbox" name="rails" value="hotwire" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-7-label" aria-describedby="goodies-7-description" x-model="hotwire">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="goodies-7-label" class="block text-sm font-medium"> Use Hotwire / Turbo / Stimulus? </span>
@@ -451,7 +461,7 @@
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="rails" value="jbuilder" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-8-label" aria-describedby="goodies-8-description">
+                <input type="checkbox" name="rails" value="jbuilder" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="goodies-8-label" aria-describedby="goodies-8-description" x-model="jbuilder">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="goodies-8-label" class="block text-sm font-medium"> Use JBuilder? </span>
@@ -470,7 +480,7 @@
             <div class="bg-white rounded-md -space-y-px shadow">
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="test" value="test" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="testing-0-label" aria-describedby="testing-0-description">
+                <input type="checkbox" name="test" value="test" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="testing-0-label" aria-describedby="testing-0-description" x-model="test">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="testing-0-label" class="block text-sm font-medium"> Create test files? </span>
@@ -481,7 +491,7 @@
 
               <!-- Checked: "bg-rose-50 border-rose-200 z-10", Not Checked: "border-gray-200" -->
               <label class="rounded-tl-md rounded-tr-md relative border p-4 flex cursor-pointer focus:outline-none hover:bg-rose-200">
-                <input type="checkbox" name="test" value="system" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="testing-1-label" aria-describedby="testing-1-description">
+                <input type="checkbox" name="test" value="system" class="h-4 w-4 mt-0.5 cursor-pointer shrink-0 text-rose-600 border-gray-300 focus:ring-rose-500" aria-labelledby="testing-1-label" aria-describedby="testing-1-description" x-model="systemTest">
                 <span class="ml-3 flex flex-col">
                   <!-- Checked: "text-rose-900", Not Checked: "text-gray-900" -->
                   <span id="testing-1-label" class="block text-sm font-medium"> Create system test file? </span>
@@ -511,6 +521,16 @@
           javascript: 'none',
           css: 'none',
           actionCable: false,
+          activeJob: false,
+          actionMailbox: false,
+          actionMailer: false,
+          activeRecord: false,
+          activeStorage: false,
+          actionText: false,
+          hotwire: false,
+          jbuilder: false,
+          test: false,
+          systemTest: false,
           transformPreset(string){
            if(string.length === 0) { return ""; }
            return "--" + string;
@@ -550,6 +570,46 @@
           transformActionCable(boolean){
             if(boolean) { return ""; }
             return "--skip-action-cable";
+          },
+          transformActiveJob(boolean){
+            if(boolean) { return ""; }
+            return "--skip-active-job";
+          },
+          transformActionMailbox(boolean){
+            if(boolean) { return ""; }
+            return "--skip-action-mailbox";
+          },
+          transformActionMailer(boolean){
+            if(boolean) { return ""; }
+            return "--skip-action-mailer";
+          },
+          transformActiveRecord(boolean){
+            if(boolean) { return ""; }
+            return "--skip-active-record";
+          },
+          transformActiveStorage(boolean){
+            if(boolean) { return ""; }
+            return "--skip-active-storage";
+          },
+          transformActionText(boolean){
+            if(boolean) { return ""; }
+            return "--skip-action-text";
+          },
+          transformHotwire(boolean){
+            if(boolean) { return ""; }
+            return "--skip-hotwire";
+          },
+          transformJBuilder(boolean){
+            if(boolean) { return ""; }
+            return "--skip-jbuilder";
+          },
+          transformTest(boolean){
+            if(boolean) { return ""; }
+            return "--skip-test";
+          },
+          transformSystemTest(boolean){
+            if(boolean) { return ""; }
+            return "--skip-system-test";
           },
           tr(s) {
             return s + 'abcd';
