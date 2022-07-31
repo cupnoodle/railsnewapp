@@ -18,31 +18,35 @@
             <input type="text" name="appname" id="appname" class="mx-auto max-w-xl shadow-sm focus:ring-rose-500 focus:border-rose-500 block w-full sm:text-sm border-gray-300 rounded-md py-3" placeholder="my_awesome_app_name" x-model="appName">
           </div>
         </div>
-
-        <div class="sticky top-0 z-50 p-2 bg-slate-800 text-white font-mono text-lg">
-          <p>rails new 
-            <span x-text="appName"></span>
-            <span x-text="transformPreset(preset)"></span>
-            <span x-text="transformDatabase(database)"></span>
-            <span x-text="transformGitignore(gitignore)"></span>
-            <span x-text="transformKeep(keep)"></span>
-            <span x-text="transformBootsnap(bootsnap)"></span>
-            <span x-text="transformBundleInstall(bundleInstall)"></span>
-            <span x-text="transformAssetPipeline(assetPipeline)"></span>
-            <span x-text="transformJavascript(javascript)"></span>
-            <span x-text="transformCSS(css)"></span>
-            <span x-text="transformActionCable(actionCable)"></span>
-            <span x-text="transformActiveJob(activeJob)"></span>
-            <span x-text="transformActionMailbox(actionMailbox)"></span>
-            <span x-text="transformActionMailer(actionMailer)"></span>
-            <span x-text="transformActiveRecord(activeRecord)"></span>
-            <span x-text="transformActiveStorage(activeStorage)"></span>
-            <span x-text="transformActionText(actionText)"></span>
-            <span x-text="transformHotwire(hotwire)"></span>
-            <span x-text="transformJBuilder(jbuilder)"></span>
-            <span x-text="transformTest(test)"></span>
-            <span x-text="transformSystemTest(systemTest)"></span>
-          </p>
+        <div class="md:sticky top-0 z-50">
+          <div class="bg-slate-800 text-white font-mono rounded text-sm md:text-md p-2">
+            <p id="rails-command">rails new 
+              <span x-text="appName"></span>
+              <span x-text="transformPreset(preset)"></span>
+              <span x-text="transformDatabase(database)"></span>
+              <span x-text="transformGitignore(gitignore)"></span>
+              <span x-text="transformKeep(keep)"></span>
+              <span x-text="transformBootsnap(bootsnap)"></span>
+              <span x-text="transformBundleInstall(bundleInstall)"></span>
+              <span x-text="transformAssetPipeline(assetPipeline)"></span>
+              <span x-text="transformJavascript(javascript)"></span>
+              <span x-text="transformCSS(css)"></span>
+              <span x-text="transformActionCable(actionCable)"></span>
+              <span x-text="transformActiveJob(activeJob)"></span>
+              <span x-text="transformActionMailbox(actionMailbox)"></span>
+              <span x-text="transformActionMailer(actionMailer)"></span>
+              <span x-text="transformActiveRecord(activeRecord)"></span>
+              <span x-text="transformActiveStorage(activeStorage)"></span>
+              <span x-text="transformActionText(actionText)"></span>
+              <span x-text="transformHotwire(hotwire)"></span>
+              <span x-text="transformJBuilder(jbuilder)"></span>
+              <span x-text="transformTest(test)"></span>
+              <span x-text="transformSystemTest(systemTest)"></span>
+            </p>
+          </div>
+          <div class="text-left mt-4">
+            <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500" @click="copyCommand()" x-text="copyButtonText">Copy command</button>
+          </div>
         </div>
 
         <div class="mx-auto max-w-2xl text-left my-10">
@@ -510,6 +514,7 @@
     <script>
       function rails(){
         return {
+          copyButtonText: 'Copy command',
           appName: '',
           preset: '',
           database: 'sqlite3',
@@ -611,9 +616,20 @@
             if(boolean) { return ""; }
             return "--skip-system-test";
           },
-          tr(s) {
-            return s + 'abcd';
-          },
+          copyCommand() {
+            var copyText = document.getElementById("rails-command").textContent;
+
+            /* Select the text field */
+            // copyText.select(); 
+            // copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+             /* Copy the text inside the text field */
+            copyText = copyText.replace(/\s\s+/g, ' ');
+            navigator.clipboard.writeText(copyText);
+            this.copyButtonText = 'Copied! ✅';
+
+            setTimeout(() => this.copyButtonText = 'Copy command', 1200);
+          }
         }
       }
     </script>
